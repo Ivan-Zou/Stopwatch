@@ -58,22 +58,23 @@ public class Stopwatch {
 
     private static int getCentiSeconds(int centiSeconds) {
         return (centiSeconds -
-                (getSeconds(centiSeconds) * 100) -
-                (getMinutes(centiSeconds) * 6000) -
-                (getHours(centiSeconds) * 360000));
+                (getSeconds(centiSeconds) * Constants.CENTISECONDS_PER_SECOND) -
+                (getMinutes(centiSeconds) * Constants.CENTISECONDS_PER_MINUTE) -
+                (getHours(centiSeconds) * Constants.CENTISECONDS_PER_HOUR));
     }
 
     private static int getSeconds(int centiSeconds) {
-        return ((centiSeconds / 100) -
-                (getMinutes(centiSeconds) * 60) -
-                (getHours(centiSeconds) * 3600));
+        return ((centiSeconds / Constants.CENTISECONDS_PER_SECOND) -
+                (getMinutes(centiSeconds) * Constants.SECONDS_PER_MINUTE) -
+                (getHours(centiSeconds) * Constants.SECONDS_PER_HOUR));
     }
 
     private static int getMinutes(int centiSeconds) {
-        return ((centiSeconds / 6000) - getHours(centiSeconds) * 60);
+        return ((centiSeconds / Constants.CENTISECONDS_PER_MINUTE) -
+                getHours(centiSeconds) * Constants.MINUTES_PER_HOUR);
     }
 
     private static int getHours(int centiSeconds) {
-        return (centiSeconds / 360000);
+        return (centiSeconds / Constants.CENTISECONDS_PER_HOUR);
     }
 }
