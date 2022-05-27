@@ -9,8 +9,6 @@ import javax.swing.Box;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class RunStopwatch implements Runnable {
     @Override
@@ -31,13 +29,10 @@ public class RunStopwatch implements Runnable {
 
         JButton reset = new JButton("           ");
         reset.setFocusable(false);
-        reset.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (stopwatch.isStopped()) {
-                    reset.setText("           ");
-                    stopwatch.resetStatus();
-                }
+        reset.addActionListener(actionEvent -> {
+            if (stopwatch.isStopped()) {
+                reset.setText("           ");
+                stopwatch.resetStatus();
             }
         });
         controlPanel.add(reset);
@@ -47,17 +42,15 @@ public class RunStopwatch implements Runnable {
 
         JButton startStop = new JButton("Start");
         startStop.setFocusable(false);
-        startStop.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (stopwatch.isReset() || stopwatch.isStopped()) {
-                    startStop.setText("Stop");
-                    reset.setText("           ");
-                    stopwatch.runStatus();
-                } else {
-                    startStop.setText("Start");
-                    reset.setText("Reset");
-                    stopwatch.stopStatus();
-                }
+        startStop.addActionListener(actionEvent -> {
+            if (stopwatch.isReset() || stopwatch.isStopped()) {
+                startStop.setText("Stop");
+                reset.setText("           ");
+                stopwatch.runStatus();
+            } else {
+                startStop.setText("Start");
+                reset.setText("Reset");
+                stopwatch.stopStatus();
             }
         });
         controlPanel.add(startStop);

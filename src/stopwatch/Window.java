@@ -2,8 +2,6 @@ package stopwatch;
 
 import javax.swing.JLabel;
 import javax.swing.Timer;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Window {
     private final JLabel time;
@@ -18,15 +16,13 @@ public class Window {
         clickedStart = false;
         clickedStop = false;
 
-        Timer timer = new Timer(Constants.REFRESH_RATE, new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (isReset()) {
-                    reset();
-                } else if (isRunning()) {
-                    run();
-                } else {
-                    stop();
-                }
+        Timer timer = new Timer(Constants.REFRESH_RATE, actionEvent -> {
+            if (isReset()) {
+                reset();
+            } else if (isRunning()) {
+                run();
+            } else {
+                stop();
             }
         });
 
