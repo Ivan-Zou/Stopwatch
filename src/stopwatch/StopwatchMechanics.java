@@ -3,13 +3,13 @@ package stopwatch;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-public class Window {
+public class StopwatchMechanics {
     private final JLabel time;
     private final Stopwatch stopwatch;
     private boolean clickedStart, clickedStop;
     private Status status;
 
-    public Window(JLabel time) {
+    public StopwatchMechanics(JLabel time) {
         this.time = time;
         status = Status.RESET;
         stopwatch = new Stopwatch();

@@ -21,7 +21,7 @@ public class RunStopwatch implements Runnable {
         frame.add(timePanel, BorderLayout.CENTER);
         JLabel stopwatchTime = new JLabel("00:00:00.00");
         stopwatchTime.setFont(new Font(null, Font.PLAIN, Constants.TIME_FONT_SIZE));
-        Window stopwatch = new Window(stopwatchTime);
+        StopwatchMechanics stopwatch = new StopwatchMechanics(stopwatchTime);
         timePanel.add(stopwatchTime);
 
         JPanel controlPanel = new JPanel();
