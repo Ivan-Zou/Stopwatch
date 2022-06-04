@@ -14,6 +14,7 @@ public class RunStopwatch implements Runnable {
     @Override
     public void run() {
         final JFrame frame = new JFrame("Stopwatch");
+        frame.setPreferredSize(new Dimension(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT));
 
         final JPanel timePanel = new JPanel();
         frame.add(timePanel, BorderLayout.CENTER);
@@ -58,6 +59,5 @@ public class RunStopwatch implements Runnable {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocation(Constants.WINDOW_LOCATION_X, Constants.WINDOW_LOCATION_Y);
-        frame.setPreferredSize(new Dimension(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT));
     }
 }
