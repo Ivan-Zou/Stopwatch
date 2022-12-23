@@ -1,3 +1,3 @@
 ## Stopwatch
 
-![](https://cdn.discordapp.com/attachments/1029604995009613888/1055887252020002886/image0.gif)
+![Stopwatch](https://user-images.githubusercontent.com/105450001/209382248-57e0e0da-2dcb-404c-a3b0-dbb845ff03d4.gif)
